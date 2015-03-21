@@ -33,7 +33,7 @@ class ReCaptchaResponse {
 /**
  * Get response for reCAPTCHA
  */
-function get_response( $url ) {
+function recaptcha_get_response( $url ) {
 	$content = file_get_contents( $url );
 	return $content;
 }
@@ -75,7 +75,7 @@ function recaptcha_check_answer( $privkey, $remoteip, $response ) {
 	));
 
 	$url = RECAPTCHA_VERIFY_SERVER . '?' . $q;
-	$res = get_response( $url );
+	$res = recaptcha_get_response( $url );
 	$res = json_decode( $res, true );
 	$recaptcha_response = new ReCaptchaResponse();
 
