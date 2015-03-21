@@ -32,7 +32,6 @@ class MyReCaptcha {
 			'lang' => 'en'
 		);
 
-		//add_action( 'plugins_loaded', array( $this, 'plugin_loaded' ) );
 		add_action( 'appthemes_add_submenu_page', array( $this, 'admin_page' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
