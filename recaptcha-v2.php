@@ -21,6 +21,7 @@
  */
 
 define('RECAPTCHA_VERIFY_SERVER', 'https://www.google.com/recaptcha/api/siteverify');
+define('RECAPTCHA_API_SCRIPT', 'https://www.google.com/recaptcha/api.js');
 define('RECAPTHCA_DEFAULT_LANG_CODE', 'en');
 
 
@@ -37,6 +38,14 @@ function get_response( $url ) {
 	return $content;
 }
 
+function recaptcha_get_script_url( $lang ) {
+	if ( ! $lang ) {
+		$lang = RECAPTHCA_DEFAULT_LANG_CODE;
+	}
+
+	return RECAPTCHA_API_SCRIPT . '?hl=' . $lang;
+}
+
 /**
  * Show reCAPTCHA html code
  */
@@ -45,11 +54,6 @@ function recaptcha_get_html( $pubkey, $lang ) {
 		die( 'reCAPTCHA was not configured' );
 	}
 
-	if ( ! $lang ) {
-		$lang = RECAPTHCA_DEFAULT_LANG_CODE;
-	}
-
-    echo '<script src="https://www.google.com/recaptcha/api.js?hl=' . $lang . '"></script>';
 	echo '<div id="recaptcha_widget_div" class="g-recaptcha" data-sitekey="' . $pubkey . '"></div>';
 }
 

@@ -52,6 +52,8 @@ class MyReCaptcha {
 
 		require_once ( $recaptcha );
 
+		wp_enqueue_script( 'google-recaptcha', recaptcha_get_script_url( $lang ), false, '1.0.0', true );
+
 		echo '<p>';
 		echo recaptcha_get_html( $options['public_key'], $lang );
 		echo '</p>';
