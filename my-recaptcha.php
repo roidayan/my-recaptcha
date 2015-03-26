@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-define( 'MYCP_TD', 'xxx' );
+define( 'MYCP_TD', 'MYCP' );
 
 
 class MyReCaptcha {
