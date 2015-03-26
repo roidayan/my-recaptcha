@@ -34,7 +34,12 @@ class ReCaptchaResponse {
  * Get response for reCAPTCHA
  */
 function recaptcha_get_response( $url ) {
-	$content = file_get_contents( $url );
+	if ( function_exists( 'wp_remote_get' ) ) {
+		$response = wp_remote_get( $url );
+		$content = wp_remote_retrieve_body( $response );
+	} else {
+		$content = file_get_contents( $url );
+	}
 	return $content;
 }
 

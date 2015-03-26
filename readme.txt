@@ -3,7 +3,7 @@ Contributors: roidayan
 Tags: google, recaptcha, recaptcha v2
 Requires at least: 3.5
 Tested up to: 4.1.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,6 +26,9 @@ Add reCaptcha to registration form
 1. screenshot
 
 == Changelog ==
+
+= 1.0.1 =
+* use wp_remote_get instead of file_get_contents
 
 = 1.0 =
 * first
