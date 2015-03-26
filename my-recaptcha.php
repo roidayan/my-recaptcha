@@ -3,7 +3,7 @@
  * Plugin Name: My reCaptcha
  * Plugin URI: http://roidayan.com
  * Description: Google reCaptcha V2 plugin
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Roi Dayan
  * Author URI: http://roidayan.com
  * License: GPLv3
