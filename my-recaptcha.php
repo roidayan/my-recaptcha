@@ -3,7 +3,7 @@
  * Plugin Name: My reCaptcha
  * Plugin URI: http://roidayan.com
  * Description: Google reCaptcha V2 plugin
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Roi Dayan
  * Author URI: http://roidayan.com
  * License: GPLv3
@@ -32,7 +32,7 @@ class MyReCaptcha {
 			'lang' => 'en'
 		);
 
-		add_action( 'appthemes_add_submenu_page', array( $this, 'admin_page' ) );
+		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
 		add_action( 'after_setup_theme', array( $this, 'setup_theme' ), 1000 );
@@ -93,7 +93,7 @@ class MyReCaptcha {
 		) );
 	}
 
-	function admin_page() {
+	function admin_menu() {
 		add_options_page(
 					__( 'reCaptcha Settings', MYCP_TD ),
 					__( 'reCaptcha', MYCP_TD ),
@@ -102,7 +102,7 @@ class MyReCaptcha {
 					array( $this, 'show_options_page' ) );
 	}
 
-	function admin_menu() {
+	function admin_init() {
 		register_setting( $this->options_key, $this->options_key );
 		$section = 'my_recaptcha';
 		add_settings_section( $section,
